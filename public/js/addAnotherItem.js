@@ -6,12 +6,12 @@ const itemDefaultValue = document.querySelector(".default-value-1");
 const addRowButton = document.querySelector(".add-row");
 let newHeader;
 
+let count = 0;
+
 let addRow = () => {
-  newHeader = document.createElement("h5"); // itemHeader.localName
-  newHeader.innerText = itemHeader.innerText;
-  //   itemDefaultValue.appendChild(newHeader);
-  //   document.body.append(newHeader);
-  document.getElementById("item-default-value-1").appendChild(newHeader);
+  newHeader = document.createElement(itemHeader.localName);
+  newHeader.innerHTML = itemHeader.innerHTML;
+  addRowButton.parentNode.insertBefore(newHeader, addRowButton);
 };
 
 addRowButton.addEventListener("click", e => {
