@@ -15,6 +15,9 @@ app.use(bodyParser.urlencoded({ extended: false }));
 // parse application/json
 app.use(bodyParser.json());
 
+// use state files
+app.use(express.static("public"));
+
 app.set("view engine", "ejs");
 
 app.use("/", schemaBuilderRouter);

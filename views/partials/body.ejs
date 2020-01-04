@@ -1,9 +1,39 @@
 <!-- views/partials/body.ejs -->
 
-<h1>Schema Builder</h1>
+<div class="container">
+  <h1>Schema Builder</h1>
 
-<form method="POST" action="/">
-  <label>Schema Name:</label>
-  <input type="text" name="schemaName" placeholder="Schema Name" />
-  <button type="submit">Submit</button>
-</form>
+  <form method="POST" action="/">
+    <label for="schemaName">Schema Name:</label>
+    <input
+      type="text"
+      name="schemaName"
+      id="schemaName"
+      placeholder="Schema Name"
+    />
+    <h5 class="item-header-1">item 1</h5>
+    <label for="schemaDataTypes" class="item-type-label-1">Type</label>
+    <select id="schemaDataTypes" class="item-type-select-1">
+      <option value="">Please select item type </option>
+
+      <% for (let type in schemaDataTypes) { %>
+      <option value="<%= type %>"><%= type %></option>
+      <% } %>
+    </select>
+    <label for="item-default-value-1" class="default-value-label-1"
+      >Default value</label
+    >
+    <input
+      type="text"
+      name="defaultValue"
+      id="item-default-value-1"
+      placeholder="default value"
+      class="default-value-1"
+    />
+    <button onclick="addRow()" type="button" class="add-row">
+      Add another item
+    </button>
+
+    <button type="submit">Submit</button>
+  </form>
+</div>
